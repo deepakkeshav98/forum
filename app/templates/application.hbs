@@ -1,0 +1,19 @@
+<div class="menu">
+{{#each model as |user|}}
+  Logged in as {{user.email}}
+{{else}}
+ Signed in as guest
+{{/each}}
+{{#if authManager.currentUser}}
+  Logged in as {{authManager.currentUser.email}}
+{{/if}}
+
+  {{#if session.isAuthenticated}}
+    <a {{action 'invalidateSession'}}>Logout</a>
+  {{else}}
+    {{#link-to 'login'}}Login{{/link-to}}
+  {{/if}}
+</div>
+<div class="main">
+  {{outlet}}
+</div>

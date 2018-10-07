@@ -1,0 +1,19 @@
+
+
+<h2 class="jumbotron">Welcome to the ASKme forum</h2>
+<br>
+<div align="right">{{#link-to 'addquestion' class="button"}}
+ADD QUESTION
+{{/link-to}}</div>
+<h4>Take a look at some questions</h4>
+<br>
+<ul>
+{{#each reverse as |question|}}
+<li> {{#link-to 'answers' question.id}}{{question.question}}{{/link-to}}</li>
+	{{question.description}}
+	<div align="right"><h6>{{question.date}}</h6></div>
+	{{else}}
+	Be the first to add the question!!
+	<br><br>
+{{/each}}
+</ul>

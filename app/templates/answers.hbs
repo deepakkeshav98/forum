@@ -1,0 +1,21 @@
+<br><br>
+  <p>
+  {{#each reverse as |ans|}}
+ <div align="left">
+   <form>
+    <output> {{ans.answer}}</output>
+    <br><br>
+   <h5>Posted on:{{ans.date}}
+   </h5> 
+   </form> 
+  
+ </div>
+
+  {{/each}}
+  <br>
+  {{#each model.ref as |ref|}}
+  {{#link-to 'addanswer' ref.refid class='button' }}
+  ADD ANSWER
+  {{/link-to}}
+  {{/each}}
+</p>
